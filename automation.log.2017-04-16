@@ -1,0 +1,10 @@
+2017-04-16 13:36:27 INFO  Scenerio_Search:31 - Executing the Testcase  GB_01 Order set is 1.0
+2017-04-16 13:37:00 INFO  Scenerio_Search:46 - Failed as Actual msg is Sorry! There are no products to display. Expected msg is Sorry! There are no products to
+2017-04-16 13:37:11 INFO  Scenerio_Search:31 - Executing the Testcase  GB_01 Order set is 2.0
+2017-04-16 13:37:40 INFO  Scenerio_Search:42 - Passed as Actual message is Sorry! There are no products to display. Expected message is Sorry! There are no products to display.
+2017-04-16 13:38:23 INFO  Scenerio_Search:80 - Failed as Actual msg is 3 Expected msg is 3.0
+2017-04-16 13:40:31 INFO  Scenerio_Search:31 - Executing the Testcase  GB_01 Order set is 1.0
+2017-04-16 13:41:08 INFO  Scenerio_Search:46 - Failed as Actual msg is Sorry! There are no products to display. Expected msg is Sorry! There are no products to
+2017-04-16 13:41:20 INFO  Scenerio_Search:31 - Executing the Testcase  GB_01 Order set is 2.0
+2017-04-16 13:41:46 INFO  Scenerio_Search:42 - Passed as Actual message is Sorry! There are no products to display. Expected message is Sorry! There are no products to display.
+2017-04-16 13:42:27 INFO  Scenerio_Search:76 - Passed as Actual message is 3 Expected message is 3

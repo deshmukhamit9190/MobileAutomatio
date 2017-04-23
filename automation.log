@@ -1,0 +1,15 @@
+2017-04-23 10:01:37 INFO  Scenerio_Cart:48 - Passed as Actual Result is Mango - RawEcpected Result is Mango - Raw
+2017-04-23 10:19:21 INFO  Scenerio_Cart:48 - Passed as Actual Result is Raw Mango - DicedEcpected Result is Raw Mango - Diced
+2017-04-23 10:24:17 INFO  Scenerio_Cart:51 - Failed as Actual Result is Mango - RawEcpected Result is Raw Mango - Diced
+2017-04-23 10:28:14 INFO  Scenerio_Cart:88 - Passed as Actual Result is There are no items in your basket.Ecpected Result is There are no items in your basket.
+2017-04-23 10:38:48 INFO  Scenerio_Search:31 - Executing the Testcase  GB_01 Order set is 1.0
+2017-04-23 10:39:17 INFO  Scenerio_Search:46 - Failed as Actual msg is Sorry! There are no products to display. Expected msg is Sorry! There are no products to
+2017-04-23 10:39:29 INFO  Scenerio_Search:31 - Executing the Testcase  GB_01 Order set is 2.0
+2017-04-23 10:40:00 INFO  Scenerio_Search:42 - Passed as Actual message is Sorry! There are no products to display. Expected message is Sorry! There are no products to display.
+2017-04-23 10:40:42 INFO  Scenerio_Search:76 - Passed as Actual message is 3 Expected message is 3
+2017-04-23 10:44:04 INFO  Scenerio_Search:76 - Passed as Actual message is 3 Expected message is 3
+2017-04-23 10:52:04 INFO  Scenerio_Search:76 - Passed as Actual message is 3 Expected message is 3
+2017-04-23 11:04:07 INFO  Scenerio_Search:76 - Passed as Actual message is 3 Expected message is 3
+2017-04-23 11:21:28 INFO  Scenerio_Search:76 - Passed as Actual message is 3 Expected message is 3
+2017-04-23 11:47:41 INFO  Scenerio_Search:? - Passed as Actual message is 3 Expected message is 3
+2017-04-23 12:04:15 INFO  Scenerio_Search:76 - Passed as Actual message is 3 Expected message is 3

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="MarBatch" duration-ms="52916" started-at="2017-04-23T05:50:40Z" finished-at="2017-04-23T05:51:33Z">
+    <groups>
+      <group name="regression">
+        <method signature="Scenerio_Search.testValidSearch(java.util.Map)[pri:0, instance:scenerio_Component.Scenerio_Search@71e53b]" name="testValidSearch" class="scenerio_Component.Scenerio_Search"/>
+      </group> <!-- regression -->
+    </groups>
+    <test name="RegSet1" duration-ms="52916" started-at="2017-04-23T05:50:40Z" finished-at="2017-04-23T05:51:33Z">
+      <class name="scenerio_Component.Scenerio_Search">
+        <test-method status="PASS" signature="testValidSearch(java.util.Map)[pri:0, instance:scenerio_Component.Scenerio_Search@71e53b]" name="testValidSearch" duration-ms="52489" started-at="2017-04-23T11:20:40Z" data-provider="dp_ValidSearch" finished-at="2017-04-23T11:21:33Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{=, Execute_Flag=Y, TC_ID=GB_04, Script_name=ValidSearch, Search_Item=Johnson powder, Exp_Result=3.0, Order_Set=1.0}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidSearch -->
+      </class> <!-- scenerio_Component.Scenerio_Search -->
+    </test> <!-- RegSet1 -->
+  </suite> <!-- MarBatch -->
+</testng-results>
