@@ -14,6 +14,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.BeforeTest;
+
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
@@ -27,6 +31,8 @@ public class BaseClass {
 	static AppiumDriverLocalService service;
 	public static AndroidDriver driver;
 
+	public static ExtentReports extentReport;
+	public static ExtentTest extentTest;
 
 	public static void start_Server() throws InterruptedException
 	{
@@ -44,7 +50,7 @@ public class BaseClass {
 		{
 			System.out.println("not able to start the appium server");
 		}
-		
+
 		Thread.sleep(8000);
 	}
 
@@ -73,6 +79,9 @@ public class BaseClass {
 			Thread.sleep(4000);
 			System.out.println("stopped the appium server");
 		}
+		extentReport.endTest(extentTest);
+		extentReport.flush();
+
 	}
 
 
@@ -82,18 +91,35 @@ public class BaseClass {
 
 		wait.until(ExpectedConditions.visibilityOf(ele)).isDisplayed();
 	}
-    public void screenshot_Capture(String TC_ID,String Order_Set) throws IOException
-    {  
-    	Date date=new Date();
-    	SimpleDateFormat df=new SimpleDateFormat("yyy-mm-dd hh-mm-ss");
-    	String str=df.format(date)+".png";
-   
-    	
-    	TakesScreenshot takeScreen=(TakesScreenshot)driver;
-    	
-    	File screenshotAs = takeScreen.getScreenshotAs(OutputType.FILE);
-    	
-    	FileUtils.copyFile(screenshotAs, new File("C:\\rohit\\localWorkspace\\March4_BB_project\\Screenshot\\"+TC_ID+"-"+Order_Set+str));
-    }
+	public String screenshot_Capture(String TC_ID,String Order_Set) throws IOException
+	{  
+		Date date=new Date();
+		SimpleDateFormat df=new SimpleDateFormat("yyyy-mm-dd hh-mm-ss");
+		String str=df.format(date)+".png";
+
+
+		TakesScreenshot takeScreen=(TakesScreenshot)driver;
+
+		File screenshotAs = takeScreen.getScreenshotAs(OutputType.FILE);
+
+		FileUtils.copyFile(screenshotAs, new File("C:\\rohit\\localWorkspace\\March4_BB_project\\Screenshot\\"+TC_ID+"-"+Order_Set+"-"+str));
+		String path="C:\\rohit\\localWorkspace\\March4_BB_project\\Screenshot\\"+TC_ID+"-"+Order_Set+"-"+str;
+        
+		
+		return path;
+	}
+
+
+	@BeforeTest(alwaysRun=true)
+	public static void extent_Report()
+	{
+
+		Date date=new Date();
+		SimpleDateFormat df=new SimpleDateFormat("yyyy-mm-dd hh-mm-ss");
+		String str=df.format(date)+".html";
+
+		extentReport=	new ExtentReports("C:\\rohit\\localWorkspace\\March4_BB_project\\Reports\\"+"BB_Project"+str,false);
+		System.out.println("before method executed sucessfully");
+	}
 
 }

@@ -1,5 +1,6 @@
 package scenerio_Component;
 
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.Map;
 
@@ -7,11 +8,13 @@ import org.apache.log4j.Logger;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+import com.relevantcodes.extentreports.LogStatus;
+
 import generic_Component.BaseClass;
 import pageObject_Component.PageObjectSearch;
 
 public class Scenerio_Search extends BaseClass {
-    
+
 
 	public static Logger log=Logger.getLogger(Scenerio_Search.class);
 
@@ -27,7 +30,7 @@ public class Scenerio_Search extends BaseClass {
 
 
 		start_Server();
-		
+
 		log.info("Executing the Testcase  "+TC_ID+" Order set is "+Order_Set);
 		init_App();
 		PageObjectSearch searchPage=new PageObjectSearch(driver);
@@ -39,7 +42,7 @@ public class Scenerio_Search extends BaseClass {
 
 		if(Actual_Result.equals(Exp_Result))
 		{
-		    log.info("Passed as Actual message is "+Actual_Result+" Expected message is "+Exp_Result);
+			log.info("Passed as Actual message is "+Actual_Result+" Expected message is "+Exp_Result);
 		}
 		else
 		{
@@ -51,10 +54,11 @@ public class Scenerio_Search extends BaseClass {
 		sAssert.assertAll();
 	}
 
-	
+
 	@Test(dataProvider="dp_ValidSearch",dataProviderClass=dataProvider_Component.DataProvider_Search.class,groups="regression")
-	public void testValidSearch(Map search) throws MalformedURLException, InterruptedException
+	public void testValidSearch(Map search) throws InterruptedException, IOException
 	{   //Need to create the instance in every method otherwise getting the old state
+
 		SoftAssert sAssert=new SoftAssert();
 		String TC_ID=search.get("TC_ID").toString();
 		String Order_Set=search.get("Order_Set").toString();
@@ -62,7 +66,11 @@ public class Scenerio_Search extends BaseClass {
 		String Exp_Result=search.get("Exp_Result").toString().replace(".0", "");
 
 
+
 		start_Server();
+		extentTest = extentReport.startTest("Valid search test");
+		extentTest.log(LogStatus.INFO, "Executing test case with TC id  "+TC_ID+"order set "+Order_Set);
+
 		init_App();
 		PageObjectSearch searchPage=new PageObjectSearch(driver);
 		searchPage.clickOnSearch();
@@ -73,12 +81,18 @@ public class Scenerio_Search extends BaseClass {
 
 		if(Actual_Result.equals(Exp_Result))
 		{
-		    log.info("Passed as Actual message is "+Actual_Result+" Expected message is "+Exp_Result);
+			log.info("Passed as Actual message is "+Actual_Result+" Expected message is "+Exp_Result);
+			extentTest.addScreenCapture(screenshot_Capture(TC_ID, Order_Set));
+			extentTest.log(LogStatus.PASS, "Passed as Actual message is "+Actual_Result+" Expected message is "+Exp_Result);
+
 		}
 		else
 		{
 			log.info("Failed as Actual msg is "+Actual_Result+ " Expected msg is "+Exp_Result);;
 			sAssert.fail("Failed as Actual msg is "+Actual_Result+ " Expected msg is "+Exp_Result);
+			screenshot_Capture(TC_ID, Order_Set);
+			extentTest.log(LogStatus.INFO, "after scrren cpture");
+			extentTest.log(LogStatus.FAIL, "Failed as Actual message is "+Actual_Result+" Expected message is "+Exp_Result,extentTest.addScreenCapture(screenshot_Capture(TC_ID, Order_Set)));
 		}
 		stop_server();	
 		sAssert.assertAll();
