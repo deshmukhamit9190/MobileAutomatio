@@ -2,19 +2,23 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="MarBatch" duration-ms="57875" started-at="2017-04-23T06:16:48Z" finished-at="2017-04-23T06:17:46Z">
+  <suite name="MarBatch" duration-ms="54413" started-at="2017-05-01T11:28:50Z" finished-at="2017-05-01T11:29:44Z">
     <groups>
       <group name="regression">
-        <method signature="Scenerio_Search.testValidSearch(java.util.Map)[pri:0, instance:scenerio_Component.Scenerio_Search@16f6598]" name="testValidSearch" class="scenerio_Component.Scenerio_Search"/>
+        <method signature="Scenerio_Search.testValidSearch(java.util.Map)[pri:0, instance:scenerio_Component.Scenerio_Search@965684]" name="testValidSearch" class="scenerio_Component.Scenerio_Search"/>
       </group> <!-- regression -->
     </groups>
-    <test name="RegSet1" duration-ms="57875" started-at="2017-04-23T06:16:48Z" finished-at="2017-04-23T06:17:46Z">
+    <test name="RegSet1" duration-ms="54413" started-at="2017-05-01T11:28:50Z" finished-at="2017-05-01T11:29:44Z">
       <class name="scenerio_Component.Scenerio_Search">
-        <test-method status="PASS" signature="testValidSearch(java.util.Map)[pri:0, instance:scenerio_Component.Scenerio_Search@16f6598]" name="testValidSearch" duration-ms="57437" started-at="2017-04-23T11:46:49Z" data-provider="dp_ValidSearch" finished-at="2017-04-23T11:47:46Z">
+        <test-method status="PASS" signature="extent_Report()[pri:0, instance:scenerio_Component.Scenerio_Search@965684]" name="extent_Report" is-config="true" duration-ms="397" started-at="2017-05-01T16:58:50Z" finished-at="2017-05-01T16:58:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- extent_Report -->
+        <test-method status="PASS" signature="testValidSearch(java.util.Map)[pri:0, instance:scenerio_Component.Scenerio_Search@965684]" name="testValidSearch" duration-ms="53599" started-at="2017-05-01T16:58:51Z" data-provider="dp_ValidSearch" finished-at="2017-05-01T16:59:44Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{=, Execute_Flag=Y, TC_ID=GB_04, Script_name=ValidSearch, Search_Item=Johnson powder, Exp_Result=3.0, Order_Set=1.0}]]>
+                <![CDATA[{=, Execute_Flag=Y, TC_ID=GB_04, Script_name=ValidSearch, Search_Item=Johnson powder, Exp_Result=5.0, Order_Set=1.0}]]>
               </value>
             </param>
           </params>

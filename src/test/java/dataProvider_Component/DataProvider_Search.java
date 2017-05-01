@@ -33,8 +33,9 @@ public class DataProvider_Search {
 	public static List<Object[]>  loadData(String scriptname) throws IOException
 	{
 
-		ExcelReadWrite x1=new ExcelReadWrite("C:\\rohit\\localWorkspace\\March4_BB_project\\TestData\\TestData.xls");
-
+	//	ExcelReadWrite x1=new ExcelReadWrite("C:\\rohit\\localWorkspace\\March4_BB_project\\TestData\\TestData.xls");
+		ExcelReadWrite x1=new ExcelReadWrite(System.getProperty("user.dir")+"\\src\\test\\resources\\March4_BB_project\\TestData\\TestData.xls");
+		
 		HSSFSheet sheet1=x1.Setsheet("Scenario_Search");
 
 		int rowCount=x1.getrowcount(sheet1);

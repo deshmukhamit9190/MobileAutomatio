@@ -1,7 +1,6 @@
 package scenerio_Component;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
@@ -12,7 +11,10 @@ import generic_Component.BaseClass;
 import pageObject_Component.PageObjectCart;
 import pageObject_Component.PageObjectSearch;
 
-public class Scenerio_Cart extends BaseClass{
+
+
+
+public class Scenerio_Cart extends BaseClass {
 
 	public static Logger log=Logger.getLogger(Scenerio_Cart.class);
 	

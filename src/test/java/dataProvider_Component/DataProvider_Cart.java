@@ -33,7 +33,8 @@ public class DataProvider_Cart {
 	public static List<Object[]> loadCartData(String scriptName) throws IOException
 	{
 
-		ExcelReadWrite x=new ExcelReadWrite("C:\\rohit\\localWorkspace\\March4_BB_project\\TestData\\TestData.xls");
+		//ExcelReadWrite x=new ExcelReadWrite("C:\\rohit\\localWorkspace\\March4_BB_project\\TestData\\TestData.xls");
+		ExcelReadWrite x=new ExcelReadWrite(System.getProperty("user.dir")+"\\src\\test\\resources\\March4_BB_project\\TestData\\TestData.xls");
 		HSSFSheet scenarioCart = x.Setsheet("Scenario_Cart");
 
 		//to get row and column of the sheet

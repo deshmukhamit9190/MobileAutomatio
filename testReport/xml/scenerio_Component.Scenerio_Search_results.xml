@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="57.437">
+           time="53.599">
   <properties />
   
   
-            <testcase name="testValidSearch" time="57.437" classname="scenerio_Component.Scenerio_Search" />
+            <testcase name="testValidSearch" time="53.599" classname="scenerio_Component.Scenerio_Search" />
       
 </testsuite>

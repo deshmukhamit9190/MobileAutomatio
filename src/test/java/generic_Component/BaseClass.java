@@ -94,17 +94,20 @@ public class BaseClass {
 	public String screenshot_Capture(String TC_ID,String Order_Set) throws IOException
 	{  
 		Date date=new Date();
-		SimpleDateFormat df=new SimpleDateFormat("yyyy-mm-dd hh-mm-ss");
+		SimpleDateFormat df=new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
 		String str=df.format(date)+".png";
 
 
 		TakesScreenshot takeScreen=(TakesScreenshot)driver;
 
 		File screenshotAs = takeScreen.getScreenshotAs(OutputType.FILE);
-
-		FileUtils.copyFile(screenshotAs, new File("C:\\rohit\\localWorkspace\\March4_BB_project\\Screenshot\\"+TC_ID+"-"+Order_Set+"-"+str));
-		String path="C:\\rohit\\localWorkspace\\March4_BB_project\\Screenshot\\"+TC_ID+"-"+Order_Set+"-"+str;
         
+		String path=System.getProperty("user.dir")+"\\src\\test\\resources\\March4_BB_project\\Screenshot\\"+TC_ID+"-"+Order_Set+"-"+str;
+		//FileUtils.copyFile(screenshotAs, new File("C:\\rohit\\localWorkspace\\March4_BB_project\\Screenshot\\"+TC_ID+"-"+Order_Set+"-"+str));
+	    //String path="C:\\rohit\\localWorkspace\\March4_BB_project\\Screenshot\\"+TC_ID+"-"+Order_Set+"-"+str;
+		
+		FileUtils.copyFile(screenshotAs, new File(path));
+	   
 		
 		return path;
 	}
@@ -115,10 +118,10 @@ public class BaseClass {
 	{
 
 		Date date=new Date();
-		SimpleDateFormat df=new SimpleDateFormat("yyyy-mm-dd hh-mm-ss");
+		SimpleDateFormat df=new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
 		String str=df.format(date)+".html";
-
-		extentReport=	new ExtentReports("C:\\rohit\\localWorkspace\\March4_BB_project\\Reports\\"+"BB_Project"+str,false);
+		//extentReport=	new ExtentReports("C:\\rohit\\localWorkspace\\March4_BB_project\\Reports\\"+"BB_Project"+str,false);
+        extentReport=	new ExtentReports(System.getProperty("user.dir")+"\\src\\test\\resources\\March4_BB_project\\Reports\\"+"BB_Project"+str,false);
 		System.out.println("before method executed sucessfully");
 	}
 
